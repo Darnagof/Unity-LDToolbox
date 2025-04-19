@@ -1,7 +1,9 @@
 {
     "name": "Darnagof.LDToolbox.Editor",
     "rootNamespace": "LDToolbox",
-    "references": [],
+    "references": [
+        "GUID:56068cd20dc6e6d40aa5412f8e98e23d"
+    ],
     "includePlatforms": [
         "Editor"
     ],
