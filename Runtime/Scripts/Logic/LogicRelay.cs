@@ -46,19 +46,10 @@ namespace LDToolbox
         {
             Gizmos.color = Color.green;
 
-            for (int i = 0; i < Triggered.GetPersistentEventCount(); i++)
+            foreach (GameObject target in GizmoUtils.GetGameObjectsListeningToEvent(Triggered))
             {
-                Object targetObj = Triggered.GetPersistentTarget(i);
-                if (targetObj is Component component)
-                {
-                    Gizmos.DrawLine(transform.position, component.transform.position);
-                }
-                else if (targetObj is GameObject go)
-                {
-                    Gizmos.DrawLine(transform.position, go.transform.position);
-                }
+                Gizmos.DrawLine(transform.position, target.transform.position);
             }
-
         }
 #endif
     }
