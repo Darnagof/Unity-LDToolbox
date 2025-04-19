@@ -1,0 +1,11 @@
+{
+    "name": "com.darnagof.ldtoolbox",
+    "version": "0.0.1",
+    "displayName": "LDToolbox",
+    "description": "A toolbox of modules to facilitate level-design, inspired by map editors",
+    "unity": "2020.3",
+    "author": {
+      "name": "Darnagof"
+    },
+    "keywords": ["level-design", "utils", "toolbox"]
+  }
