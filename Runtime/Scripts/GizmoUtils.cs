@@ -6,7 +6,7 @@ namespace LDToolbox
 {
     static public class GizmoUtils
     {
-        static public List<GameObject> GetGameObjectsListeningToEvent(UnityEvent evt)
+        static public List<GameObject> GetGameObjectsListeningToEvent(UnityEventBase evt)
         {
             List<GameObject> objects = new List<GameObject>();
 

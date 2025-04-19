@@ -41,5 +41,19 @@ namespace LDToolbox
                 OnGreaterThan.Invoke(inputValue);
             }
         }
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+
+            foreach (LogicComparatorEvent evt in new[] { OnLessThan, OnGreaterThan, OnEqualTo, OnNotEqualTo })
+            {
+                foreach (GameObject target in GizmoUtils.GetGameObjectsListeningToEvent(evt))
+                {
+                    Gizmos.DrawLine(transform.position, target.transform.position);
+                }
+            }
+        }
+#endif
     }
 }
