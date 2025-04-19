@@ -44,16 +44,21 @@ namespace LDToolbox
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            // TODO not working, fix this
-            if (Selection.activeGameObject != gameObject) return;
-
             Gizmos.color = Color.green;
+
             for (int i = 0; i < Triggered.GetPersistentEventCount(); i++)
             {
-                MonoBehaviour targetObj = Triggered.GetPersistentTarget(i) as MonoBehaviour;
-                if (!targetObj) continue;
-                Gizmos.DrawLine(transform.position, targetObj.transform.position);
+                Object targetObj = Triggered.GetPersistentTarget(i);
+                if (targetObj is Component component)
+                {
+                    Gizmos.DrawLine(transform.position, component.transform.position);
+                }
+                else if (targetObj is GameObject go)
+                {
+                    Gizmos.DrawLine(transform.position, go.transform.position);
+                }
             }
+
         }
 #endif
     }
