@@ -17,12 +17,12 @@ namespace LDToolbox
         [Tooltip("The value to compare against")]
         public float value = 0f;
 
-        void SetValue(float newValue)
+        public void SetValue(float newValue)
         {
             value = newValue;
         }
 
-        void CompareWith(float inputValue)
+        public void CompareWith(float inputValue)
         {
             float compResult = value - inputValue;
             if (compResult == 0f)
