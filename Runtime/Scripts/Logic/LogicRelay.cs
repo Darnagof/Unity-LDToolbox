@@ -41,8 +41,10 @@ namespace LDToolbox
             relayEnabled = status;
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
+            // TODO not working, fix this
             if (Selection.activeGameObject != gameObject) return;
 
             Gizmos.color = Color.green;
@@ -53,5 +55,6 @@ namespace LDToolbox
                 Gizmos.DrawLine(transform.position, targetObj.transform.position);
             }
         }
+#endif
     }
 }
